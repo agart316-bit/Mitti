@@ -20,6 +20,28 @@ const hear = (base, slug, kind) => { new Audio(`${base}audio/${slug}-${kind}.mp3
 
 export default function StatePage({ state: s, base }) {
   const root = useRef(null), ingImg = useRef(null)
+  const orderRef = useRef(null)
+
+  // The order block lays its columns out absolutely, so its height can't follow the copy by itself.
+  // Measure the lowest column and stretch the block to fit (never shorter than the 94vh design height), so no text is cut off.
+  useEffect(() => {
+    const sec = orderRef.current
+    if (!sec) return
+    const fit = () => {
+      sec.style.minHeight = ''
+      if (window.innerWidth < 900) return // phone/tablet layout is flat and already grows with its content
+      let bottom = 0
+      sec.querySelectorAll('.o-col').forEach((c) => { bottom = Math.max(bottom, c.offsetTop + c.offsetHeight) })
+      const need = Math.ceil(bottom + window.innerHeight * 0.08) // breathing room under the last line
+      if (need > sec.offsetHeight) sec.style.minHeight = need + 'px'
+    }
+    fit()
+    const ro = new ResizeObserver(fit)
+    sec.querySelectorAll('.o-col').forEach((c) => ro.observe(c))
+    window.addEventListener('resize', fit)
+    document.fonts?.ready.then(fit)
+    return () => { ro.disconnect(); window.removeEventListener('resize', fit) }
+  }, [s.slug])
   const next = states[s.stop] || states[0] // registry is in route order, so index = stop number; the last stop loops to the first
   const a = s.arrival, ing = s.ingredient, st = s.story, o = s.order
   const I = s.images || {}                                         // real photos by slot name (h1, h2, h3, tile, t1, t2, big, story); missing = placeholder
@@ -142,7 +164,7 @@ export default function StatePage({ state: s, base }) {
       </section>
 
       {/* ---------- 4. ORDER ---------- */}
-      <section id="order" className={`scene order${s.dry ? ' dry' : ''}`}>
+      <section id="order" ref={orderRef} className={`scene order${s.dry ? ' dry' : ''}`}>
         <h2 className="hero-title o-title"><span className="row">the</span><span className="row">order</span></h2>
 
         {/* Cocktail illustration: one drawn glass per state (src/assets/glasses). */}
