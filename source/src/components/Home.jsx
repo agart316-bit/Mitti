@@ -42,9 +42,18 @@ const openReserve = () => window.dispatchEvent(new Event('mitti-reserve'))
 export default function Home({ base }) {
   const root = useRef(null)
   const [hover, setHover] = useState(null)
+  const [picked, setPicked] = useState(null) // touch: the state selected by a first tap; a second tap opens it
+  const touch = useRef(false)               // true when the last pointer to press a state was a finger or pen
   const cur = rows.find((r) => r.slug === hover)
   const [last, setLast] = useState(null) // keeps the label in place while it fades out
   const shown = cur || rows.find((r) => r.slug === last) || rows[0]
+
+  // Touch: tapping anywhere outside the map's states clears the selection.
+  useEffect(() => {
+    const away = (e) => { if (!e.target.closest?.('.hm-mapbox a, .hm-chips a')) { setHover(null); setPicked(null) } }
+    document.addEventListener('pointerdown', away)
+    return () => document.removeEventListener('pointerdown', away)
+  }, [])
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -102,7 +111,15 @@ export default function Home({ base }) {
               {outline.filter((o) => o.id !== 'an').map((o) => <path key={o.id} d={o.d} fill="rgba(243,230,211,0.05)" stroke="rgba(243,230,211,0.3)" strokeWidth="0.5" />)}
               {rows.map((r) => (
                 <a key={r.slug} href={`${base}${r.slug}/index.html`} aria-label={`${r.name}, stop ${pad(r.stop)}`}
-                  onMouseEnter={() => { setHover(r.slug); setLast(r.slug) }} onMouseLeave={() => setHover(null)} onFocus={() => { setHover(r.slug); setLast(r.slug) }} onBlur={() => setHover(null)}>
+                  onPointerDown={(e) => { touch.current = e.pointerType !== 'mouse' }}
+                  onKeyDown={() => { touch.current = false }}
+                  onClick={(e) => {
+                    // Finger: the first tap selects the state (glow, name, caption); tapping the same state again opens it.
+                    if (touch.current && picked !== r.slug) { e.preventDefault(); setPicked(r.slug); setHover(r.slug); setLast(r.slug) }
+                  }}
+                  onPointerEnter={(e) => { if (e.pointerType === 'mouse') { setHover(r.slug); setLast(r.slug) } }}
+                  onPointerLeave={(e) => { if (e.pointerType === 'mouse') setHover(null) }}
+                  onFocus={() => { setHover(r.slug); setLast(r.slug) }} onBlur={() => { if (!touch.current) setHover(null) }}>
                   <path d={r.d} stroke="#2d0302" strokeWidth="0.9" strokeLinejoin="round"
                     style={{ cursor: 'pointer', outline: 'none', transition: 'fill .9s ease, filter .9s ease',
                       fill: r.slug === hover ? '#d9a3b0' : `rgba(217,163,176,${hover ? 0.16 : 0.34})`,
@@ -116,7 +133,13 @@ export default function Home({ base }) {
               <span>{shown.name}</span>
             </div>
           </div>
-          <p aria-live="polite" className="hm-cap">{cur ? `stop ${pad(cur.stop)} of 12` : 'hover a state'}</p>
+          <p aria-live="polite" className="hm-cap">{cur ? `stop ${pad(cur.stop)} of 12${picked === cur.slug ? ' · tap again to open' : ''}` : 'explore a state'}</p>
+          {/* Fingers are bigger than Goa and Sikkim, so touch screens also get a plain list of the twelve stops. */}
+          <ul className="hm-chips">
+            {rows.map((r) => (
+              <li key={r.slug}><a href={`${base}${r.slug}/index.html`} className={r.slug === hover ? 'on' : ''}><span>{pad(r.stop)}</span>{r.name}</a></li>
+            ))}
+          </ul>
         </div>
       </section>
 

@@ -50,7 +50,7 @@ export default function Header({ base, current, dark, active }) {
             Mix a glass
             {active === 'mix' && <svg className="ring" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden><ellipse cx="50" cy="20" rx="48" ry="17" /></svg>}
           </a>
-          <a href={link('visit/index.html')} onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('mitti-reserve')) }}>Plan a visit</a>
+          <a href="#reserve" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('mitti-reserve')) }}>Plan a visit</a>
           <a href={link('passport/index.html')} className={active === 'passport' ? 'on' : ''}>
             Passport
             {active === 'passport' && <svg className="ring" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden><ellipse cx="50" cy="20" rx="48" ry="17" /></svg>}

@@ -77,6 +77,7 @@ export default function Reserve() {
   useEffect(() => {
     const show = () => { const d = DAYS(); setDays(d); setF((p) => ({ ...p, date: p.date && d.some((x) => x.iso === p.date) ? p.date : d[0].iso, time: p.time || '8:00 pm' })); setSaved(load()); setPick([]); setDone(null); setErr({}); setPhoneOpen(false); setOpen(true) }
     window.addEventListener('mitti-reserve', show)
+    if (location.hash === '#reserve') show() // the "Plan a visit" link opened in a new tab or without scripts lands here
     return () => window.removeEventListener('mitti-reserve', show)
   }, [])
   useEffect(() => {
