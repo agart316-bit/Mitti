@@ -1,0 +1,259 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-labelledby="t d">
+<title id="t">Uttarakhand: buransh wine</title>
+<desc id="d">Chilled wine glass of pink buransh wine with a malta peel twist and toasted jakhiya on the rim; rhododendron flowers and a hill orange beside it.</desc>
+<defs>
+<linearGradient id="uttarakhand-glass" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="#fff" stop-opacity=".20"/><stop offset=".16" stop-color="#fff" stop-opacity=".06"/>
+<stop offset=".82" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#fff" stop-opacity=".22"/></linearGradient>
+<linearGradient id="uttarakhand-liq" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FBC9C4" stop-opacity="0.94"/><stop offset="0.5" stop-color="#F08A9A" stop-opacity="0.96"/><stop offset="1" stop-color="#DC5470" stop-opacity="0.98"/></linearGradient>
+<linearGradient id="uttarakhand-shade" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="#6a0c24" stop-opacity=".30"/><stop offset=".22" stop-color="#6a0c24" stop-opacity=".0"/>
+<stop offset=".78" stop-color="#6a0c24" stop-opacity=".0"/><stop offset="1" stop-color="#6a0c24" stop-opacity=".34"/></linearGradient><clipPath id="uttarakhand-clip"><path d="M214 250 C206 340 230 430 300 452 C370 430 394 340 386 250 Z"/></clipPath><radialGradient id="uttarakhand-petal" cx="0.5" cy="0.8" r="0.9"><stop offset="0" stop-color="#FF6B7C"/><stop offset="0.6" stop-color="#E2334F"/><stop offset="1" stop-color="#B01A38"/></radialGradient><linearGradient id="uttarakhand-orange" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB54A"/><stop offset="1" stop-color="#E9781A"/></linearGradient><linearGradient id="uttarakhand-lf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4E8A4A"/><stop offset="1" stop-color="#285A2A"/></linearGradient>
+</defs>
+<rect id="background" width="600" height="800" fill="#B82A18"/>
+<circle id="halo" cx="300" cy="440" r="285" fill="#CF3E2A" opacity=".55"/>
+<g id="shadow"><ellipse cx="310" cy="703" rx="92.9" ry="14.3" fill="#000" opacity="0.2"/>
+<ellipse cx="300" cy="702" rx="77.4" ry="9.1" fill="#000" opacity="0.28"/></g>
+<g id="malta-orange"><circle cx="478" cy="668" r="36" fill="url(#uttarakhand-orange)" stroke="#F6EEDC" stroke-width="2.4"/>
+<path d="M452 654 A30 30 0 0 1 474 636" fill="none" stroke="#fff" stroke-width="5" stroke-opacity="0.5" stroke-linecap="round"/>
+<path d="M480 634 C490 624 500 628 500 628" fill="none" stroke="#3F6A24" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="490" cy="628" rx="9" ry="4" fill="#4E8A2E" stroke="#F6EEDC" stroke-width="1.2" transform="rotate(-20 490 628)"/>
+<circle cx="459.4" cy="650" r="1.2" fill="#B85A0C" opacity="0.5"/>
+<circle cx="502.2" cy="658.8" r="1.3" fill="#B85A0C" opacity="0.5"/>
+<circle cx="497.3" cy="671.5" r="1.3" fill="#B85A0C" opacity="0.5"/>
+<circle cx="460.7" cy="644.6" r="0.8" fill="#B85A0C" opacity="0.5"/>
+<circle cx="464.9" cy="670.6" r="1" fill="#B85A0C" opacity="0.5"/>
+<circle cx="475.9" cy="667" r="0.8" fill="#B85A0C" opacity="0.5"/>
+<circle cx="472.6" cy="696.9" r="1.2" fill="#B85A0C" opacity="0.5"/>
+<circle cx="492.6" cy="690.8" r="0.8" fill="#B85A0C" opacity="0.5"/>
+<circle cx="471.3" cy="662" r="0.7" fill="#B85A0C" opacity="0.5"/>
+<circle cx="486.4" cy="659.2" r="0.8" fill="#B85A0C" opacity="0.5"/>
+<circle cx="506.4" cy="664.8" r="0.9" fill="#B85A0C" opacity="0.5"/>
+<circle cx="498.8" cy="662.8" r="1.1" fill="#B85A0C" opacity="0.5"/>
+<circle cx="486.4" cy="696.7" r="1.1" fill="#B85A0C" opacity="0.5"/>
+<circle cx="506.3" cy="661.9" r="0.9" fill="#B85A0C" opacity="0.5"/>
+<circle cx="471.2" cy="676.1" r="0.8" fill="#B85A0C" opacity="0.5"/>
+<circle cx="491.8" cy="674" r="1.1" fill="#B85A0C" opacity="0.5"/>
+<circle cx="502.5" cy="668.5" r="0.9" fill="#B85A0C" opacity="0.5"/>
+<circle cx="467.9" cy="693.6" r="1" fill="#B85A0C" opacity="0.5"/>
+<circle cx="470" cy="686.3" r="1.1" fill="#B85A0C" opacity="0.5"/>
+<circle cx="506.6" cy="678.7" r="0.7" fill="#B85A0C" opacity="0.5"/>
+<circle cx="477.9" cy="640" r="0.7" fill="#B85A0C" opacity="0.5"/>
+<circle cx="481.9" cy="651.5" r="1" fill="#B85A0C" opacity="0.5"/>
+<circle cx="482.9" cy="668.3" r="0.8" fill="#B85A0C" opacity="0.5"/>
+<circle cx="489.2" cy="664.7" r="1.2" fill="#B85A0C" opacity="0.5"/>
+<circle cx="505" cy="655.1" r="0.9" fill="#B85A0C" opacity="0.5"/>
+<circle cx="465.1" cy="684.7" r="1.2" fill="#B85A0C" opacity="0.5"/>
+<circle cx="498.3" cy="684.4" r="1.2" fill="#B85A0C" opacity="0.5"/>
+<circle cx="480.7" cy="664.7" r="1.3" fill="#B85A0C" opacity="0.5"/>
+<circle cx="491.7" cy="676.8" r="1.1" fill="#B85A0C" opacity="0.5"/>
+<circle cx="492.1" cy="660" r="1.3" fill="#B85A0C" opacity="0.5"/>
+<circle cx="463.2" cy="663.7" r="0.9" fill="#B85A0C" opacity="0.5"/>
+<circle cx="481" cy="674" r="0.8" fill="#B85A0C" opacity="0.5"/>
+<circle cx="466.4" cy="639.3" r="0.8" fill="#B85A0C" opacity="0.5"/>
+<circle cx="507.3" cy="677.2" r="1" fill="#B85A0C" opacity="0.5"/>
+<circle cx="467.2" cy="675.3" r="1.1" fill="#B85A0C" opacity="0.5"/>
+<circle cx="486.9" cy="650.8" r="1" fill="#B85A0C" opacity="0.5"/>
+<circle cx="505.6" cy="678.1" r="0.7" fill="#B85A0C" opacity="0.5"/>
+<circle cx="450.1" cy="669.2" r="0.8" fill="#B85A0C" opacity="0.5"/>
+<circle cx="474.5" cy="638.2" r="1.1" fill="#B85A0C" opacity="0.5"/>
+<circle cx="479.9" cy="660.1" r="1" fill="#B85A0C" opacity="0.5"/></g>
+<g transform="translate(150 636) rotate(-8) scale(1.2)" id="buransh-flower"><g transform="rotate(0 0 0)"><ellipse cx="0" cy="-28" rx="24" ry="32" fill="url(#uttarakhand-petal)" stroke="#F6EEDC" stroke-width="2"/>
+<path d="M0 -2 L0 -46" stroke="#8A1230" stroke-width="1.2" stroke-opacity="0.5"/>
+<path d="M-9 -2 L-14 -40 M9 -2 L14 -40" stroke="#8A1230" stroke-width="1" stroke-opacity="0.35"/></g>
+<g transform="rotate(72 0 0)"><ellipse cx="0" cy="-28" rx="24" ry="32" fill="url(#uttarakhand-petal)" stroke="#F6EEDC" stroke-width="2"/>
+<path d="M0 -2 L0 -46" stroke="#8A1230" stroke-width="1.2" stroke-opacity="0.5"/>
+<path d="M-9 -2 L-14 -40 M9 -2 L14 -40" stroke="#8A1230" stroke-width="1" stroke-opacity="0.35"/></g>
+<g transform="rotate(144 0 0)"><ellipse cx="0" cy="-28" rx="24" ry="32" fill="url(#uttarakhand-petal)" stroke="#F6EEDC" stroke-width="2"/>
+<path d="M0 -2 L0 -46" stroke="#8A1230" stroke-width="1.2" stroke-opacity="0.5"/>
+<path d="M-9 -2 L-14 -40 M9 -2 L14 -40" stroke="#8A1230" stroke-width="1" stroke-opacity="0.35"/></g>
+<g transform="rotate(216 0 0)"><ellipse cx="0" cy="-28" rx="24" ry="32" fill="url(#uttarakhand-petal)" stroke="#F6EEDC" stroke-width="2"/>
+<path d="M0 -2 L0 -46" stroke="#8A1230" stroke-width="1.2" stroke-opacity="0.5"/>
+<path d="M-9 -2 L-14 -40 M9 -2 L14 -40" stroke="#8A1230" stroke-width="1" stroke-opacity="0.35"/></g>
+<g transform="rotate(288 0 0)"><ellipse cx="0" cy="-28" rx="24" ry="32" fill="url(#uttarakhand-petal)" stroke="#F6EEDC" stroke-width="2"/>
+<path d="M0 -2 L0 -46" stroke="#8A1230" stroke-width="1.2" stroke-opacity="0.5"/>
+<path d="M-9 -2 L-14 -40 M9 -2 L14 -40" stroke="#8A1230" stroke-width="1" stroke-opacity="0.35"/></g>
+<circle cx="-4.7" cy="-23.1" r="1.6" fill="#6E0A22" opacity="0.8"/>
+<circle cx="1.9" cy="-21.5" r="1.3" fill="#6E0A22" opacity="0.8"/>
+<circle cx="-8.8" cy="-17.3" r="1.5" fill="#6E0A22" opacity="0.8"/>
+<circle cx="-4.8" cy="-14.1" r="1.7" fill="#6E0A22" opacity="0.8"/>
+<circle cx="6.1" cy="-24.5" r="1.8" fill="#6E0A22" opacity="0.8"/>
+<circle cx="-6.3" cy="-21.3" r="2.1" fill="#6E0A22" opacity="0.8"/>
+<circle cx="0.4" cy="-19.2" r="1.9" fill="#6E0A22" opacity="0.8"/>
+<circle cx="-7.8" cy="-18.8" r="1.8" fill="#6E0A22" opacity="0.8"/>
+<circle cx="-3.6" cy="-33.4" r="2.1" fill="#6E0A22" opacity="0.8"/>
+<path d="M0 -4 Q-3.8 -24.2 -7.6 -47.3" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="-7.6" cy="-47.3" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(-100 -7.6 -47.3)"/>
+<path d="M0 -4 Q5.7 -24 11.4 -46.5" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="11.4" cy="-46.5" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(-75 11.4 -46.5)"/>
+<path d="M0 -4 Q14.1 -21.3 28.3 -37.7" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="28.3" cy="-37.7" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(-50 28.3 -37.7)"/>
+<path d="M0 -4 Q19.9 -16.8 39.9 -22.6" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="39.9" cy="-22.6" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(-25 39.9 -22.6)"/>
+<path d="M0 -4 Q22 -11.2 44 -4" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="44" cy="-4" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(0 44 -4)"/>
+<path d="M0 -4 Q19.9 -5.6 39.9 14.6" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="39.9" cy="14.6" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(25 39.9 14.6)"/>
+<path d="M0 -4 Q14.1 -1.1 28.3 29.7" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="28.3" cy="29.7" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(50 28.3 29.7)"/>
+<path d="M0 -4 Q5.7 1.6 11.4 38.5" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="11.4" cy="38.5" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(75 11.4 38.5)"/>
+<path d="M0 -4 Q-3.8 1.8 -7.6 39.3" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="-7.6" cy="39.3" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(100 -7.6 39.3)"/>
+<circle cx="0" cy="-2" r="5" fill="#F3D9A0" stroke="#F6EEDC" stroke-width="1"/></g>
+<g transform="translate(194 694) rotate(-8) scale(0.7)" id="buransh-flower-2"><g transform="rotate(0 0 0)"><ellipse cx="0" cy="-28" rx="24" ry="32" fill="url(#uttarakhand-petal)" stroke="#F6EEDC" stroke-width="2"/>
+<path d="M0 -2 L0 -46" stroke="#8A1230" stroke-width="1.2" stroke-opacity="0.5"/>
+<path d="M-9 -2 L-14 -40 M9 -2 L14 -40" stroke="#8A1230" stroke-width="1" stroke-opacity="0.35"/></g>
+<g transform="rotate(72 0 0)"><ellipse cx="0" cy="-28" rx="24" ry="32" fill="url(#uttarakhand-petal)" stroke="#F6EEDC" stroke-width="2"/>
+<path d="M0 -2 L0 -46" stroke="#8A1230" stroke-width="1.2" stroke-opacity="0.5"/>
+<path d="M-9 -2 L-14 -40 M9 -2 L14 -40" stroke="#8A1230" stroke-width="1" stroke-opacity="0.35"/></g>
+<g transform="rotate(144 0 0)"><ellipse cx="0" cy="-28" rx="24" ry="32" fill="url(#uttarakhand-petal)" stroke="#F6EEDC" stroke-width="2"/>
+<path d="M0 -2 L0 -46" stroke="#8A1230" stroke-width="1.2" stroke-opacity="0.5"/>
+<path d="M-9 -2 L-14 -40 M9 -2 L14 -40" stroke="#8A1230" stroke-width="1" stroke-opacity="0.35"/></g>
+<g transform="rotate(216 0 0)"><ellipse cx="0" cy="-28" rx="24" ry="32" fill="url(#uttarakhand-petal)" stroke="#F6EEDC" stroke-width="2"/>
+<path d="M0 -2 L0 -46" stroke="#8A1230" stroke-width="1.2" stroke-opacity="0.5"/>
+<path d="M-9 -2 L-14 -40 M9 -2 L14 -40" stroke="#8A1230" stroke-width="1" stroke-opacity="0.35"/></g>
+<g transform="rotate(288 0 0)"><ellipse cx="0" cy="-28" rx="24" ry="32" fill="url(#uttarakhand-petal)" stroke="#F6EEDC" stroke-width="2"/>
+<path d="M0 -2 L0 -46" stroke="#8A1230" stroke-width="1.2" stroke-opacity="0.5"/>
+<path d="M-9 -2 L-14 -40 M9 -2 L14 -40" stroke="#8A1230" stroke-width="1" stroke-opacity="0.35"/></g>
+<circle cx="-4.7" cy="-23.1" r="1.6" fill="#6E0A22" opacity="0.8"/>
+<circle cx="1.9" cy="-21.5" r="1.3" fill="#6E0A22" opacity="0.8"/>
+<circle cx="-8.8" cy="-17.3" r="1.5" fill="#6E0A22" opacity="0.8"/>
+<circle cx="-4.8" cy="-14.1" r="1.7" fill="#6E0A22" opacity="0.8"/>
+<circle cx="6.1" cy="-24.5" r="1.8" fill="#6E0A22" opacity="0.8"/>
+<circle cx="-6.3" cy="-21.3" r="2.1" fill="#6E0A22" opacity="0.8"/>
+<circle cx="0.4" cy="-19.2" r="1.9" fill="#6E0A22" opacity="0.8"/>
+<circle cx="-7.8" cy="-18.8" r="1.8" fill="#6E0A22" opacity="0.8"/>
+<circle cx="-3.6" cy="-33.4" r="2.1" fill="#6E0A22" opacity="0.8"/>
+<path d="M0 -4 Q-3.8 -24.2 -7.6 -47.3" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="-7.6" cy="-47.3" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(-100 -7.6 -47.3)"/>
+<path d="M0 -4 Q5.7 -24 11.4 -46.5" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="11.4" cy="-46.5" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(-75 11.4 -46.5)"/>
+<path d="M0 -4 Q14.1 -21.3 28.3 -37.7" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="28.3" cy="-37.7" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(-50 28.3 -37.7)"/>
+<path d="M0 -4 Q19.9 -16.8 39.9 -22.6" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="39.9" cy="-22.6" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(-25 39.9 -22.6)"/>
+<path d="M0 -4 Q22 -11.2 44 -4" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="44" cy="-4" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(0 44 -4)"/>
+<path d="M0 -4 Q19.9 -5.6 39.9 14.6" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="39.9" cy="14.6" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(25 39.9 14.6)"/>
+<path d="M0 -4 Q14.1 -1.1 28.3 29.7" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="28.3" cy="29.7" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(50 28.3 29.7)"/>
+<path d="M0 -4 Q5.7 1.6 11.4 38.5" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="11.4" cy="38.5" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(75 11.4 38.5)"/>
+<path d="M0 -4 Q-3.8 1.8 -7.6 39.3" fill="none" stroke="#F6EEDC" stroke-width="1.4"/>
+<ellipse cx="-7.6" cy="39.3" rx="3.4" ry="2" fill="#F3D9A0" stroke="#8A5A1A" stroke-width="0.6" transform="rotate(100 -7.6 39.3)"/>
+<circle cx="0" cy="-2" r="5" fill="#F3D9A0" stroke="#F6EEDC" stroke-width="1"/></g>
+<g transform="translate(128 706) rotate(-160) scale(1)"><g transform="translate(0 0) rotate(0) scale(1)"><path d="M0 0 C14 -17 49 -15.3 70 0 C49 15.3 14 17 0 0 Z" fill="url(#uttarakhand-lf)" stroke="#F6EEDC" stroke-width="1.6" stroke-linejoin="round" stroke-opacity="0.85"/>
+<path d="M0 0 L70 0" stroke="#1B3E1E" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+<path d="M10.9 0 L17.2 -8.7" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M10.9 0 L17.2 8.7" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M21.9 0 L28.2 -7.3" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M21.9 0 L28.2 7.3" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M32.8 0 L39.1 -5.8" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M32.8 0 L39.1 5.8" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M43.8 0 L50 -4.4" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M43.8 0 L50 4.4" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M54.7 0 L61 -2.9" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M54.7 0 L61 2.9" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/></g></g>
+<g transform="translate(150 708) rotate(-128) scale(1)"><g transform="translate(0 0) rotate(0) scale(1)"><path d="M0 0 C14 -17 49 -15.3 70 0 C49 15.3 14 17 0 0 Z" fill="url(#uttarakhand-lf)" stroke="#F6EEDC" stroke-width="1.6" stroke-linejoin="round" stroke-opacity="0.85"/>
+<path d="M0 0 L70 0" stroke="#1B3E1E" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+<path d="M10.9 0 L17.2 -8.7" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M10.9 0 L17.2 8.7" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M21.9 0 L28.2 -7.3" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M21.9 0 L28.2 7.3" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M32.8 0 L39.1 -5.8" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M32.8 0 L39.1 5.8" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M43.8 0 L50 -4.4" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M43.8 0 L50 4.4" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M54.7 0 L61 -2.9" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/>
+<path d="M54.7 0 L61 2.9" stroke="#1B3E1E" stroke-width="1" fill="none" stroke-opacity="0.8"/></g></g>
+<g clip-path="url(#uttarakhand-clip)"><rect x="150" y="346" width="300" height="130" rx="0" fill="url(#uttarakhand-liq)"/>
+<rect x="150" y="346" width="300" height="130" rx="0" fill="url(#uttarakhand-shade)"/>
+<ellipse cx="300" cy="346" rx="100" ry="13" fill="url(#uttarakhand-liq)"/>
+<ellipse cx="300" cy="346" rx="100" ry="13" fill="#fff" fill-opacity="0.3"/>
+<ellipse cx="300" cy="347" rx="88" ry="8" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke-opacity="0.5"/>
+<circle cx="258.1" cy="405.9" r="1.6" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M257.2 405.6 A1 1 0 0 1 258 404.9" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="357.5" cy="417.1" r="1.8" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M356.5 416.8 A1.1 1.1 0 0 1 357.4 416" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="295.6" cy="415.9" r="3" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M293.9 415.4 A1.8 1.8 0 0 1 295.4 414.1" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="313.2" cy="383.9" r="1.9" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M312.2 383.6 A1.2 1.2 0 0 1 313.1 382.8" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="359.4" cy="373.2" r="2.5" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M358 372.8 A1.5 1.5 0 0 1 359.3 371.7" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="334.1" cy="364.1" r="3.1" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M332.4 363.7 A1.8 1.8 0 0 1 333.9 362.3" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="293.4" cy="396" r="3.6" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M291.4 395.5 A2.2 2.2 0 0 1 293.2 393.9" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="307.3" cy="425.2" r="2.1" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M306.2 424.9 A1.2 1.2 0 0 1 307.2 424" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="329.8" cy="412.9" r="2.2" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M328.6 412.6 A1.3 1.3 0 0 1 329.7 411.6" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="324.4" cy="388.2" r="3.3" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M322.6 387.7 A2 2 0 0 1 324.3 386.3" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="285.2" cy="384.2" r="2.1" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M284 383.8 A1.3 1.3 0 0 1 285.1 382.9" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="342" cy="373" r="3.3" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M340.2 372.5 A2 2 0 0 1 341.8 371" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="241.7" cy="423.2" r="2" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M240.6 422.9 A1.2 1.2 0 0 1 241.6 422" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/>
+<circle cx="286" cy="370.9" r="1.5" fill="#fff" fill-opacity="0.1" stroke="#fff" stroke-opacity="0.55" stroke-width="1.2"/>
+<path d="M285.2 370.6 A0.9 0.9 0 0 1 286 369.9" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="1" stroke-linecap="round"/></g>
+<path d="M296 650 Q296 674 232 688 Q300 706 368 688 Q304 674 304 650 Z" fill="url(#uttarakhand-glass)" stroke="#F6EEDC" stroke-width="3.2" stroke-linejoin="round"/>
+<ellipse cx="300" cy="696" rx="56" ry="8" fill="none" stroke="#F6EEDC" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" stroke-opacity="0.35"/>
+<path d="M293 450 L295 654 L305 654 L307 450 Z" fill="url(#uttarakhand-glass)" stroke="#F6EEDC" stroke-width="3" stroke-linejoin="round"/>
+<path d="M214 250 C206 340 230 430 300 452 C370 430 394 340 386 250" fill="url(#uttarakhand-glass)" stroke="#F6EEDC" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round" stroke-opacity="1"/>
+<path d="M228 290 C222 340 236 392 270 428" fill="none" stroke="#fff" stroke-width="7" stroke-opacity="0.34" stroke-linecap="round"/>
+<path d="M242 284 C238 306 240 324 246 342" fill="none" stroke="#fff" stroke-width="2.5" stroke-opacity="0.55" stroke-linecap="round"/>
+<path d="M372 300 C376 350 362 396 338 424" fill="none" stroke="#fff" stroke-width="3" stroke-opacity="0.22" stroke-linecap="round"/>
+<ellipse cx="300" cy="250" rx="86" ry="14" fill="none" stroke="#F6EEDC" stroke-width="3.4"/>
+<ellipse cx="300" cy="250" rx="78" ry="10" fill="none" stroke="#F6EEDC" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke-opacity="0.5"/>
+<g id="jakhiya"><circle cx="286.5" cy="263.8" r="1.6" fill="#241309" opacity="0.95"/>
+<circle cx="282.8" cy="263.7" r="2.3" fill="#241309" opacity="0.95"/>
+<circle cx="279.1" cy="263.6" r="1.8" fill="#241309" opacity="0.95"/>
+<circle cx="275.5" cy="263.4" r="2" fill="#241309" opacity="0.95"/>
+<circle cx="271.9" cy="263.2" r="2.2" fill="#241309" opacity="0.95"/>
+<circle cx="268.3" cy="263" r="1.9" fill="#241309" opacity="0.95"/>
+<circle cx="264.9" cy="262.8" r="2.2" fill="#241309" opacity="0.95"/>
+<circle cx="261.4" cy="262.5" r="2.2" fill="#241309" opacity="0.95"/>
+<circle cx="258.1" cy="262.2" r="2" fill="#241309" opacity="0.95"/>
+<circle cx="254.8" cy="261.9" r="2" fill="#241309" opacity="0.95"/>
+<circle cx="251.7" cy="261.6" r="2.3" fill="#241309" opacity="0.95"/>
+<circle cx="248.6" cy="261.2" r="2.1" fill="#241309" opacity="0.95"/>
+<circle cx="245.6" cy="260.8" r="1.7" fill="#241309" opacity="0.95"/>
+<circle cx="242.7" cy="260.4" r="2.3" fill="#241309" opacity="0.95"/>
+<circle cx="240" cy="260" r="2.2" fill="#241309" opacity="0.95"/>
+<circle cx="237.3" cy="259.6" r="2.4" fill="#241309" opacity="0.95"/>
+<circle cx="234.8" cy="259.1" r="2.1" fill="#241309" opacity="0.95"/>
+<circle cx="232.4" cy="258.7" r="1.8" fill="#241309" opacity="0.95"/>
+<circle cx="230.1" cy="258.2" r="1.8" fill="#241309" opacity="0.95"/>
+<circle cx="228" cy="257.6" r="2" fill="#241309" opacity="0.95"/>
+<circle cx="226" cy="257.1" r="1.6" fill="#241309" opacity="0.95"/>
+<circle cx="224.1" cy="256.6" r="2.1" fill="#241309" opacity="0.95"/>
+<circle cx="222.4" cy="256" r="2.1" fill="#241309" opacity="0.95"/>
+<circle cx="220.9" cy="255.5" r="2.3" fill="#241309" opacity="0.95"/>
+<circle cx="219.5" cy="254.9" r="1.6" fill="#241309" opacity="0.95"/>
+<circle cx="218.2" cy="254.3" r="2" fill="#241309" opacity="0.95"/>
+<circle cx="217.1" cy="253.7" r="2" fill="#241309" opacity="0.95"/>
+<circle cx="216.2" cy="253.1" r="2" fill="#241309" opacity="0.95"/>
+<circle cx="215.4" cy="252.5" r="1.8" fill="#241309" opacity="0.95"/>
+<circle cx="214.8" cy="251.9" r="1.4" fill="#241309" opacity="0.95"/>
+<circle cx="305.6" cy="350.2" r="1.3" fill="#241309" opacity="0.9"/>
+<circle cx="304.8" cy="347.8" r="1.2" fill="#241309" opacity="0.9"/>
+<circle cx="288.2" cy="345.4" r="1.5" fill="#241309" opacity="0.9"/>
+<circle cx="256.3" cy="349.7" r="1.7" fill="#241309" opacity="0.9"/>
+<circle cx="263.9" cy="347.6" r="1.5" fill="#241309" opacity="0.9"/>
+<circle cx="309" cy="344.7" r="1.7" fill="#241309" opacity="0.9"/>
+<circle cx="297.9" cy="350.1" r="1.4" fill="#241309" opacity="0.9"/>
+<circle cx="302" cy="344.4" r="1.3" fill="#241309" opacity="0.9"/></g>
+<g id="malta-peel"><path d="M384 238 C436 168 504 206 474 256 C448 292 396 268 420 238 C442 214 486 240 462 282" fill="none" stroke="#D96A14" stroke-width="17" stroke-linecap="round"/>
+<path d="M384 238 C436 168 504 206 474 256 C448 292 396 268 420 238 C442 214 486 240 462 282" fill="none" stroke="#FFAE45" stroke-width="11" stroke-linecap="round"/>
+<path d="M384 238 C436 168 504 206 474 256 C448 292 396 268 420 238 C442 214 486 240 462 282" fill="none" stroke="#FFE2A8" stroke-width="3" stroke-linecap="round" stroke-opacity="0.8"/>
+<circle cx="414" cy="210" r="1.1" fill="#B85A0C" opacity="0.8"/>
+<circle cx="440" cy="214" r="1.1" fill="#B85A0C" opacity="0.8"/>
+<circle cx="452" cy="236" r="1.1" fill="#B85A0C" opacity="0.8"/>
+<circle cx="430" cy="268" r="1.1" fill="#B85A0C" opacity="0.8"/>
+<circle cx="404" cy="256" r="1.1" fill="#B85A0C" opacity="0.8"/></g>
+</svg>

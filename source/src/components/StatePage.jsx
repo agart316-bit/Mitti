@@ -8,19 +8,13 @@ import Letters from './Letters.jsx'
 import ArcTitle from './ArcTitle.jsx'
 import Circled from './Circled.jsx'
 import { stampImg } from '../stampimgs.js'
+import { glassImg } from '../glassimgs.js'
 gsap.registerPlugin(ScrollTrigger)
 
 function Speaker() { return <svg viewBox="0 0 24 24" aria-hidden><path d="M3 9v6h4l5 4V5L7 9H3z" /><path d="M15.5 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg> }
 // Footnote numbers in the story text point at sources that are not shown on the page. Flip to true to show them.
 const SHOW_FOOTNOTES = false
 
-// Four glass outlines for the cocktail illustration slot (placeholders until the real drawings arrive).
-const GLASSES = {
-  coupe: <><ellipse cx="100" cy="72" rx="58" ry="11" /><path d="M42 72 C44 128 92 140 100 142 C108 140 156 128 158 72" /><path d="M52 92 C70 104 130 80 148 92" /><path d="M100 142 V228" /><ellipse cx="100" cy="232" rx="42" ry="9" /><circle cx="150" cy="60" r="16" /><path d="M150 44 V76 M134 60 H166" /></>,
-  wine: <><ellipse cx="100" cy="64" rx="40" ry="8" /><path d="M60 64 C56 124 82 152 100 152 C118 152 144 124 140 64" /><path d="M64 100 C84 110 118 90 138 100" /><path d="M100 152 V228" /><ellipse cx="100" cy="232" rx="40" ry="9" /></>,
-  tumbler: <><ellipse cx="100" cy="104" rx="52" ry="9" /><path d="M48 104 L58 232 C58 242 142 242 142 232 L152 104" /><path d="M52 150 C80 160 120 140 148 150" /><rect x="76" y="168" width="22" height="22" rx="3" /><rect x="104" y="180" width="20" height="20" rx="3" /></>,
-  tall: <><ellipse cx="100" cy="56" rx="36" ry="7" /><path d="M64 56 L72 236 C72 246 128 246 128 236 L136 56" /><path d="M68 110 C88 120 112 100 132 110" /><path d="M112 16 L104 150" /></>,
-}
 const pad = (n) => String(n).padStart(2, '0')
 const hear = (base, slug, kind) => { new Audio(`${base}audio/${slug}-${kind}.mp3`).play().catch(() => {}) } // recordings come later
 
@@ -87,7 +81,7 @@ export default function StatePage({ state: s, base }) {
           <Ph tone={rot(['sand', 'rose', 'mono'], 0)} label={P.h1} src={I.h1}  className="img i1" />
           <Ph tone={rot(['sand', 'rose', 'mono'], 1)} label={P.h2} src={I.h2}  className="img i2" />
           <Ph tone={rot(['sand', 'rose', 'mono'], 2)} label={P.h3} src={I.h3}  className="img i3" />
-          <h1 className="hero-title" style={{ fontSize: `min(${titleSize}vw, ${(30 / (1.05 * words.length)).toFixed(1)}vh)` }}>
+          <h1 className="hero-title" style={{ fontSize: `min(${titleSize}vw, ${(30 / (1.05 * words.length)).toFixed(1)}vh)`, '--tl': longest }}>
             {words.map((w) => <span className="row" key={w}><Letters text={w.toLowerCase()} /></span>)}
           </h1>
           <div className="txt entry">
@@ -151,9 +145,9 @@ export default function StatePage({ state: s, base }) {
       <section id="order" className={`scene order${s.dry ? ' dry' : ''}`}>
         <h2 className="hero-title o-title"><span className="row">the</span><span className="row">order</span></h2>
 
-        {/* Cocktail illustration slot. Swap the placeholder glass for your drawing. */}
+        {/* Cocktail illustration: one drawn glass per state (src/assets/glasses). */}
         <figure className="cocktail">
-          <svg viewBox="0 0 200 270" aria-hidden>{GLASSES[s.glass || 'coupe']}</svg>
+          <img src={glassImg[s.slug]} alt={`${o.drink.name}, illustrated`} width="600" height="800" />
           <figcaption className="cocktail-name">{o.drink.name}</figcaption>
         </figure>
 

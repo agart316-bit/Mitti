@@ -65,6 +65,7 @@ export default function Mix({ base }) {
   const [picked, setPicked] = useState([]) // chosen tadkas (indexes)
   const [saved, setSaved] = useState(false)
   const [k, setK] = useState(1)
+  const [phone, setPhone] = useState(() => matchMedia('(max-width:699px)').matches) // phones get two plain pickers instead of the wheel
 
   // 22 glasses: every state's main drink, plus its zero-proof where there is one. Dry states pour their zero-proof as the main drink.
   const glasses = useMemo(() => states.flatMap((st) => {
@@ -80,10 +81,21 @@ export default function Mix({ base }) {
   const ft = tadkas[focus], ftOn = picked.includes(focus)
 
   useEffect(() => {
-    const fit = () => setK(Math.min(1, (window.innerWidth * (window.innerWidth < 900 ? 0.96 : 0.86)) / 1040))
+    const fit = () => { setK(Math.min(1, (window.innerWidth * (window.innerWidth < 900 ? 0.96 : 0.86)) / 1040)); setPhone(window.innerWidth < 700) }
     fit(); window.addEventListener('resize', fit)
     return () => window.removeEventListener('resize', fit)
   }, [])
+
+  // If the wheel appears after the page loaded (phone turned sideways, window widened), turn it to the current choice.
+  useEffect(() => {
+    if (phone || !ringEl.current.o) return
+    const o = angleFor(glass, N.o), i = angleFor(focus, N.i)
+    if (Math.abs(rot.current.o - o) > 0.5 || Math.abs(rot.current.i - i) > 0.5) {
+      rot.current = { o, i }
+      gsap.set(ringEl.current.o, { rotation: o }); gsap.set(ringEl.current.i, { rotation: i })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phone])
 
   // Apply a rotation to one ring and keep the glass / tadka at the marker in step with it.
   const setRot = (w, theta) => {
@@ -125,10 +137,13 @@ export default function Mix({ base }) {
         gsap.fromTo(el, { opacity: 0.12 }, { opacity: 1, ease: 'none', scrollTrigger: { trigger: el, start: 'top 95%', end: 'top 60%', scrub: true } }))
     }, root)
     // The rings arrive spinning in opposite directions and settle on the first glass and tadka.
-    gsap.set(ringEl.current.o, { rotation: angleFor(0, N.o) - 200 })
-    gsap.set(ringEl.current.i, { rotation: angleFor(0, N.i) + 260 })
-    rot.current = { o: angleFor(0, N.o) - 200, i: angleFor(0, N.i) + 260 }
-    const t1 = setTimeout(() => { glide('o', angleFor(0, N.o), 'expo.out', 2.6); glide('i', angleFor(0, N.i), 'expo.out', 3) }, 350)
+    let t1 = 0
+    if (ringEl.current.o) {
+      gsap.set(ringEl.current.o, { rotation: angleFor(0, N.o) - 200 })
+      gsap.set(ringEl.current.i, { rotation: angleFor(0, N.i) + 260 })
+      rot.current = { o: angleFor(0, N.o) - 200, i: angleFor(0, N.i) + 260 }
+      t1 = setTimeout(() => { glide('o', angleFor(0, N.o), 'expo.out', 2.6); glide('i', angleFor(0, N.i), 'expo.out', 3) }, 350)
+    } else rot.current = { o: angleFor(0, N.o), i: angleFor(0, N.i) } // phone: no wheel to spin in
     return () => { clearTimeout(t1); ctx.revert(); tween.current.o && tween.current.o.kill(); tween.current.i && tween.current.i.kill() }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -217,9 +232,39 @@ export default function Mix({ base }) {
       <section className="mx-hero">
         <Header base={base} active="mix" />
         <h1 className="mx-title" aria-label="mix a glass"><span className="row" aria-hidden><Letters text="mix a glass" /></span></h1>
-        <p className="cap mx-sub">Spin the outer ring to pick a glass, the inner ring to add up to two tadkas.</p>
+        <p className="cap mx-sub">{phone ? 'Pick a glass, then add up to two tadkas.' : 'Spin the outer ring to pick a glass, the inner ring to add up to two tadkas.'}</p>
         <p className="cap mx-count">{gn}<span> · </span>{picked.length} of {MAX} tadkas</p>
 
+        {phone ? (
+          <div className="mx-phone">
+            <div className="mx-card">
+              <p className="s">your glass</p>
+              <svg viewBox="0 0 60 72" className="mx-glass" aria-hidden>{GLASS[g.shape] || GLASS.tumbler}</svg>
+              <p className="mx-gname">{gn}</p>
+              <p className="mx-tlist">{chosen.length ? chosen.map((t) => t.name).join(' + ') : 'No tadkas yet.'}</p>
+            </div>
+            <p className="eyebrow mx-eb">1 · pick a glass</p>
+            <ul className="mx-chips" aria-label="Glasses">
+              {glasses.map((it, i) => (
+                <li key={i}><button type="button" className={`mx-chip${i === glass ? ' on' : ''}`} aria-pressed={i === glass}
+                  onClick={() => { setGlass(i); setSaved(false) }}>
+                  <span className="s">{it.state}{it.zp ? ' · zero-proof' : ''}</span><span className="n">{short(it.name)}</span>
+                </button></li>
+              ))}
+            </ul>
+            <p className="eyebrow mx-eb">2 · add up to two tadkas</p>
+            <ul className="mx-chips mx-chips-wrap" aria-label="Tadkas">
+              {tadkas.map((it, i) => {
+                const on = picked.includes(i), off = picked.length >= MAX && !on
+                return (
+                  <li key={i}><button type="button" className={`mx-chip${on ? ' on' : ''}`} aria-pressed={on} disabled={off} onClick={() => toggleTadka(i)}>
+                    <span className="n">{it.name}</span>{TR[it.name] && <span className="s">{TR[it.name]}</span>}
+                  </button></li>
+                )
+              })}
+            </ul>
+          </div>
+        ) : (
         <div className="mx-stage" style={{ height: 1040 * k }}>
           <div ref={disc} className="mx-disc" style={{ transform: `translateX(-50%) scale(${k})` }} tabIndex={0} role="group"
             aria-label="Drag the outer ring to choose a glass and the inner ring to choose tadkas. Arrow left and right turn the glasses, up and down turn the tadkas, enter adds a tadka."
@@ -248,6 +293,7 @@ export default function Mix({ base }) {
             </div>
           </div>
         </div>
+        )}
 
         <div className="mx-ctas">
           {saved

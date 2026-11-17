@@ -8,6 +8,8 @@ const pad = (n) => String(n).padStart(2, '0')
 // `base` is the path back to the site root from the current page ('./' on the home page, '../' inside a state folder).
 export default function Header({ base, current, dark, active }) {
   const [open, setOpen] = useState(false)
+  const [menu, setMenu] = useState(false)       // phone and small tablet: the nav lives in a sheet under the header
+  const [narrow, setNarrow] = useState(() => matchMedia('(max-width:899px)').matches)
   const box = useRef(null)
   const timer = useRef(0)
   const hover = () => matchMedia('(hover:hover)').matches
@@ -15,8 +17,14 @@ export default function Header({ base, current, dark, active }) {
   const enter = () => { if (!hover()) return; clearTimeout(timer.current); setOpen(true) }
   const leave = () => { if (!hover()) return; clearTimeout(timer.current); timer.current = setTimeout(() => setOpen(false), 180) }
   useEffect(() => {
+    const mq = matchMedia('(max-width:899px)')
+    const on = () => { setNarrow(mq.matches); if (!mq.matches) setMenu(false) }
+    mq.addEventListener('change', on)
+    return () => mq.removeEventListener('change', on)
+  }, [])
+  useEffect(() => {
     const close = (e) => { if (!box.current?.contains(e.target)) setOpen(false) }
-    const esc = (e) => e.key === 'Escape' && setOpen(false)
+    const esc = (e) => { if (e.key === 'Escape') { setOpen(false); setMenu(false) } }
     document.addEventListener('pointerdown', close); document.addEventListener('keydown', esc)
     return () => { clearTimeout(timer.current); document.removeEventListener('pointerdown', close); document.removeEventListener('keydown', esc) }
   }, [])
@@ -24,11 +32,11 @@ export default function Header({ base, current, dark, active }) {
   const onState = !!current   // a state page belongs to the Map
 
   return (
-    <header className={`hdr${dark ? ' hdr-dark' : ''}`}>
+    <header className={`hdr${dark ? ' hdr-dark' : ''}${menu ? ' menu-open' : ''}`}>
       <a className="logo" href={link('index.html')}><img src={logo} alt="mitti, home" /></a>
       <div className="hdr-mid">
         <a className="hdr-title" href={link('index.html')}>mitti</a>
-        <nav>
+        <nav id="site-nav">
           <div className={`dd${open ? ' open' : ''}`} ref={box} onMouseEnter={enter} onMouseLeave={leave}>
             <button className={onState ? 'on' : ''} aria-haspopup="true" aria-expanded={open} onClick={() => setOpen((o) => (hover() ? true : !o))}>
               Map
@@ -36,10 +44,10 @@ export default function Header({ base, current, dark, active }) {
               {onState && <svg className="ring" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden><ellipse cx="50" cy="20" rx="48" ry="17" /></svg>}
             </button>
             {/* Always rendered so it can fade in and out; `.dd.open` makes it visible and clickable. */}
-            <ul className="dd-panel" role="menu" aria-hidden={!open}>
+            <ul className="dd-panel" role="menu" aria-hidden={!open && !narrow}>
               {states.map((s) => (
                 <li key={s.slug} role="none">
-                  <a role="menuitem" tabIndex={open ? 0 : -1} href={link(`${s.slug}/index.html`)} className={s.slug === current ? 'here' : ''}>
+                  <a role="menuitem" tabIndex={open || narrow ? 0 : -1} href={link(`${s.slug}/index.html`)} className={s.slug === current ? 'here' : ''}>
                     <span className="n">{pad(s.stop)}</span>{s.name}
                   </a>
                 </li>
@@ -50,14 +58,14 @@ export default function Header({ base, current, dark, active }) {
             Mix a glass
             {active === 'mix' && <svg className="ring" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden><ellipse cx="50" cy="20" rx="48" ry="17" /></svg>}
           </a>
-          <a href="#reserve" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('mitti-reserve')) }}>Plan a visit</a>
+          <a href="#reserve" onClick={(e) => { e.preventDefault(); setMenu(false); window.dispatchEvent(new Event('mitti-reserve')) }}>Plan a visit</a>
           <a href={link('passport/index.html')} className={active === 'passport' ? 'on' : ''}>
             Passport
             {active === 'passport' && <svg className="ring" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden><ellipse cx="50" cy="20" rx="48" ry="17" /></svg>}
           </a>
         </nav>
       </div>
-      <span />
+      <button type="button" className="hdr-burger" aria-expanded={menu} aria-controls="site-nav" onClick={() => setMenu((m) => !m)}>{menu ? 'Close' : 'Menu'}</button>
     </header>
   )
 }
