@@ -7,6 +7,7 @@ import { states } from '../data/states.js'
 import Letters from './Letters.jsx'
 import ArcTitle from './ArcTitle.jsx'
 import Circled from './Circled.jsx'
+import { stampImg } from '../stampimgs.js'
 gsap.registerPlugin(ScrollTrigger)
 
 function Speaker() { return <svg viewBox="0 0 24 24" aria-hidden><path d="M3 9v6h4l5 4V5L7 9H3z" /><path d="M15.5 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg> }
@@ -111,6 +112,7 @@ export default function StatePage({ state: s, base }) {
             </ul>
           </div>
           <Ph tone={rot(['sand', 'rose', 'mono'], 3)} label={P.tile} src={I.tile}  className="img tile" />
+          {stampImg[s.slug] && <img className="tile-stamp" src={stampImg[s.slug]} alt={`${a.english} stamp`} />}
         </div>
       </section>
 

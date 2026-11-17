@@ -6,6 +6,7 @@ import Letters from './Letters.jsx'
 import logo from '../assets/logo.png'
 import { states } from '../data/states.js'
 import { detailed } from '../data/pages.js'
+import { stampImg } from '../stampimgs.js'
 import { loadStamps, loadPlaced, savePlaced, loadGlasses, saveGlasses, clearAll } from '../stamps.js'
 
 const pad = (n) => String(n).padStart(2, '0')
@@ -18,33 +19,15 @@ const STATES = states.map((s) => {
 const byId = (id) => STATES.find((s) => s.id === id)
 const byName = (name) => STATES.find((s) => s.name === name)
 
-// Three stamp shapes, handed out in turn: a round seal, a rectangle, a rounded arrival mark.
-const SHAPES = [
-  { x1: 4, y1: 4, w1: 132, h1: 132, r1: 66, x2: 11, y2: 11, w2: 118, h2: 118, r2: 59, x3: 22, y3: 22, w3: 96, h3: 96, r3: 48, dop: 1, a: 'MITTI', ya: 33, yb: 91, yc: 72, yd: 107, k: 1 },
-  { x1: 10, y1: 24, w1: 120, h1: 92, r1: 7, x2: 16, y2: 30, w2: 108, h2: 80, r2: 3, x3: 22, y3: 36, w3: 96, h3: 68, r3: 2, dop: 0, a: 'ARRIVED', ya: 48, yb: 60, yc: 91, yd: 106, k: 0.85 },
-  { x1: 3, y1: 22, w1: 134, h1: 96, r1: 48, x2: 9, y2: 28, w2: 122, h2: 84, r2: 42, x3: 17, y3: 34, w3: 106, h3: 72, r3: 36, dop: 0, a: 'MITTI', ya: 48, yb: 91, yc: 76, yd: 105, k: 0.85 },
-]
 // Script size inside the stamp, tuned per name so long scripts still fit.
 const SSIZE = { goa: 27, karnataka: 21, kerala: 25, 'west-bengal': 16, bihar: 26, sikkim: 21, assam: 29, 'uttar-pradesh': 14, uttarakhand: 16, 'madhya-pradesh': 14, rajasthan: 20, gujarat: 24 }
 // Page areas in the 1200 x 800 drawing, and where stamps land when placed with the keyboard.
 const BOX = { l: { x0: 52, x1: 600, y0: 54, y1: 730 }, r: { x0: 600, x1: 1148, y0: 54, y1: 730 } }
-const SLOTS = [[0.3, 0.3], [0.72, 0.36], [0.3, 0.62], [0.72, 0.68], [0.32, 0.86], [0.7, 0.88]]
+const SLOTS = [[0.3, 0.3], [0.72, 0.3], [0.3, 0.72], [0.72, 0.72], [0.5, 0.5], [0.5, 0.85]]
 
-// The ink of one stamp, drawn in a 140 x 140 box. The filter (#pp-ink, defined once in the page) gives it the pressed, uneven edge.
-function StampArt({ s, i, date }) {
-  const g = SHAPES[i % 3]
-  const size = Math.round((SSIZE[s.id] || 20) * g.k)
-  return (
-    <g filter="url(#pp-ink)" className="pp-stamp">
-      <rect x={g.x1} y={g.y1} width={g.w1} height={g.h1} rx={g.r1} fill="none" stroke={s.color} strokeWidth="3.2" />
-      <rect x={g.x2} y={g.y2} width={g.w2} height={g.h2} rx={g.r2} fill="none" stroke={s.color} strokeWidth="1.1" />
-      <rect x={g.x3} y={g.y3} width={g.w3} height={g.h3} rx={g.r3} fill="none" stroke={s.color} strokeWidth="1" strokeDasharray="1.6 3.2" opacity={g.dop} />
-      <text x="70" y={g.ya} textAnchor="middle" fontSize="9" letterSpacing="3.5" fill={s.color}>{g.a}</text>
-      <text x="70" y={g.yb} textAnchor="middle" fontSize="7" letterSpacing="1.6" fill={s.color}>{s.name.toUpperCase()}</text>
-      <text x="70" y={g.yc} textAnchor="middle" fontSize={size} fill={s.color} lang="und" className="pp-scr">{s.script}</text>
-      <text x="70" y={g.yd} textAnchor="middle" fontSize="7.5" letterSpacing="1.2" fill={s.color}>{(date || '').toUpperCase()}</text>
-    </g>
-  )
+// One designed stamp (a portrait image, about 0.43 wide for every 1 tall).
+function StampImg({ s, className }) {
+  return <img className={className} src={stampImg[s.id]} alt="" draggable="false" />
 }
 
 // One page of the open passport: guilloche rosette, running head, the twelve inks as a strip, folio and serial.
@@ -123,8 +106,8 @@ export default function Passport({ base }) {
       x = box.x0 + ((e.clientX - rect.left) / rect.width) * (box.x1 - box.x0)
       y = box.y0 + ((e.clientY - rect.top) / rect.height) * (box.y1 - box.y0)
     }
-    const m = 74
-    x = Math.max(box.x0 + m, Math.min(box.x1 - m, x)); y = Math.max(box.y0 + m, Math.min(box.y1 - m, y))
+    const mx = 52, my = 116   // half the stamp's width and height in drawing units, so it stays on the page
+    x = Math.max(box.x0 + mx, Math.min(box.x1 - mx, x)); y = Math.max(box.y0 + my, Math.min(box.y1 - my, y))
     const n = seq + 1
     const next = { ...placed, [hand]: { x, y, rot: (Math.random() * 2 - 1) * 16, side, n } }
     setPlaced(next); savePlaced(next); setHand(null); setSeq(n)
@@ -202,31 +185,31 @@ export default function Passport({ base }) {
               <button type="button" className="pp-pagehit" style={{ left: '50%', top: '6.75%', width: '45.6667%', height: '84.5%' }} disabled={!hand} onClick={(e) => press('r', e)} aria-label="Press the selected stamp onto the right page" />
 
               {placedList.map(({ id, p }) => {
-                const s = byId(id), i = STATES.indexOf(s)
+                const s = byId(id)
                 return (
                   <button type="button" key={id} className="pp-stampbtn" onClick={() => pickUp(id)}
                     aria-label={`${s.name} stamp on the page. Press to pick it up and move it.`}
                     style={{ left: `${(p.x / 12).toFixed(3)}%`, top: `${(p.y / 8).toFixed(3)}%`, zIndex: 3 + p.n, transform: `translate(-50%,-50%) rotate(${p.rot.toFixed(1)}deg)`, pointerEvents: hand ? 'none' : 'auto' }}>
-                    <svg className="pp-stampin" viewBox="0 0 140 140" aria-hidden><StampArt s={s} i={i} date={stamps[id]} /></svg>
+                    <StampImg s={s} className="pp-stampin" />
                   </button>
                 )
               })}
             </div>
           </div>
           <div className="pp-tray">
-            {STATES.map((s, i) => {
+            {STATES.map((s) => {
               const on = !!stamps[s.id], here = !!placed[s.id], inHand = hand === s.id
               return on ? (
                 <button type="button" key={s.id} className={`pp-cell${inHand ? ' in' : ''}${here ? ' on' : ''}`} title={s.name} aria-pressed={inHand} onClick={() => pickUp(s.id)}
                   aria-label={inHand ? `${s.name} stamp, in hand. Press a page to place it.` : here ? `${s.name} stamp, on the page. Press to pick it up.` : `${s.name} stamp. Press to pick it up, then press a page to place it.`}>
-                  <span className="st"><svg viewBox="0 0 140 140" aria-hidden><StampArt s={s} i={i} date={stamps[s.id]} /></svg></span>
+                  <span className="st"><StampImg s={s} /></span>
                   <span>{s.num}</span>
                 </button>
               ) : (
                 <a key={s.id} className="pp-cell lock" href={`${base}${s.id}/index.html`} title={s.name} aria-label={`${s.name}, not yet tasted. Open the ${s.name} page.`}>
-                  <svg className="st" viewBox="0 0 140 140" aria-hidden>
-                    <circle cx="70" cy="70" r="64" fill="none" stroke="#2d0302" strokeOpacity="0.6" strokeWidth="2" strokeDasharray="4 6" />
-                    <text x="70" y="80" textAnchor="middle" fontSize={SSIZE[s.id] || 20} fill="#6e5a55" lang="und" className="pp-scr">{s.script}</text>
+                  <svg className="st" viewBox="0 0 60 140" aria-hidden>
+                    <rect x="2" y="2" width="56" height="136" rx="3" fill="none" stroke="#2d0302" strokeOpacity="0.6" strokeWidth="1.4" strokeDasharray="4 5" />
+                    <text transform="translate(37 70) rotate(-90)" textAnchor="middle" fontSize={Math.min(SSIZE[s.id] || 20, 24)} fill="#6e5a55" lang="und" className="pp-scr">{s.script}</text>
                   </svg>
                   <span>{s.num}</span>
                 </a>

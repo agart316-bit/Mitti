@@ -92,9 +92,10 @@ sup{font-size:.7em;margin-left:1px;color:var(--ink)}
 .hero .txt{position:absolute;--x:var(--c8);left:var(--x);width:var(--s3)}
 .hero .entry{top:55vh}
 .tile{--x:var(--c12);left:var(--x);top:55vh;width:var(--s1);height:16vh}
+.hero .tile-stamp{position:absolute;--x:var(--c12);left:var(--x);top:calc(55vh + 16vh + 1vh);width:var(--s1);height:auto;display:block;pointer-events:none}
 
 /* Mirrored pages (data: flip: true): same grid, columns swapped left to right. */
-.flip :is(.hero .i1,.hero .i2,.hero .i3,.hero .txt,.tile,.col-l,.bigimg,.circled,.o-title,.cocktail){left:auto;right:var(--x)}
+.flip :is(.hero .i1,.hero .i2,.hero .i3,.hero .txt,.tile,.tile-stamp,.col-l,.bigimg,.circled,.o-title,.cocktail){left:auto;right:var(--x)}
 /* The order columns keep their reading order (drink first, left to right); the illustration moves to the right instead. */
 .flip .oc1{--x:var(--c1)}.flip .oc2{--x:var(--c4)}.flip .oc3{--x:var(--c1)}.flip .oc4{--x:var(--c4)}
 .flip .dry .oc3{--x:var(--c4);top:10vh}.flip .dry .oc4{--x:var(--c1);top:50vh}
@@ -161,9 +162,9 @@ sup{font-size:.7em;margin-left:1px;color:var(--ink)}
 .order{--soft:color-mix(in srgb,var(--on) 78%,transparent)}
 .order .cocktail .ph-label{bottom:auto;top:calc(100% + 10px)}
 .o-title{position:absolute;--x:var(--c1);left:var(--x);top:5vh;font-size:5.4vw;text-align:left;transform:none}
-.cocktail{position:absolute;--x:var(--c1);left:var(--x);top:27vh;width:min(var(--s4),62vh);aspect-ratio:1;display:grid;place-items:center;align-content:center;}
-.cocktail svg{width:58%;fill:none;stroke:var(--b);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:-4%}
-.cocktail-name{font-family:var(--head);text-transform:lowercase;color:var(--b);font-size:2.2vw;margin-top:2%;text-align:center}
+.cocktail{position:absolute;--x:var(--c1);left:var(--x);top:50%;transform:translateY(-50%);width:min(var(--s4),62vh);display:flex;justify-content:center;margin:0} /* the glass is centred in the section; the name hangs below it */
+.cocktail svg{display:block;width:58%;height:auto;fill:none;stroke:var(--b);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cocktail-name{position:absolute;left:0;right:0;bottom:auto;top:100%;margin-top:1.5vh;font-family:var(--head);text-transform:lowercase;color:var(--b);font-size:2.2vw;text-align:center;line-height:1.1;letter-spacing:0}
 .cocktail .ph-label{left:50%;transform:translateX(-50%);bottom:5%;color:var(--soft);text-align:center;width:70%}
 .o-col{position:absolute;width:var(--s3)}
 .oc1{--x:var(--c6);left:var(--x);top:10vh}
@@ -193,10 +194,11 @@ sup{font-size:.7em;margin-left:1px;color:var(--ink)}
  .hero .i1,.hero .i2,.hero .i3{aspect-ratio:1.2/1;width:100%;opacity:1;mix-blend-mode:normal}
  .hero .hero-title{font-size:15vw;text-align:left;order:-1}
  .tile{left:89vw;top:55vh;width:9vw;height:20vh}
+ .hero .tile-stamp{left:89vw;top:calc(55vh + 20vh + 1vh);width:9vw}
  .cap{font-size:12px}
  .scene{height:auto;padding:36px 6vw;display:grid;gap:24px}
  .col-l,.bigimg,.circled,.o-col,.o-title,.cocktail{position:static;width:100%;transform:none}
- .cocktail{max-width:84vw;margin:0 auto}.cocktail-name{font-size:7vw}.o-name{font-size:8vw}.o-name.sm{font-size:6vw}
+ .cocktail{max-width:84vw;margin:0 auto;display:block}.cocktail svg{margin:0 auto}.cocktail-name{position:static;margin-top:12px;font-size:7vw}.o-name{font-size:8vw}.o-name.sm{font-size:6vw}
  .bigimg{aspect-ratio:1/1.1}.thumb{aspect-ratio:1.3/1}
  .scene .col-l{height:auto;display:block}.col-thumbs{margin-top:24px}.col-thumbs .thumb,.ing-t2{width:100%;margin-left:0}.bigimg{height:auto}
  .circled{font-size:6vw;padding:20px 0 20px 12vw}.c-arrow{left:0;top:0;width:10vw}
@@ -416,9 +418,9 @@ figcaption{position:absolute;left:10px;bottom:9px;font-size:11px;letter-spacing:
 .pp-pagehit:disabled{pointer-events:none}
 .pp-pagehit:not(:disabled){cursor:crosshair;outline:1px dashed rgba(144,31,61,.6);outline-offset:-14px;transition:background .35s var(--ease)}
 .pp-pagehit:not(:disabled):hover{background:rgba(144,31,61,.07)}
-.pp-stampbtn{position:absolute;padding:0;margin:0;width:13%;border:0;background:transparent;line-height:0;mix-blend-mode:multiply;opacity:.94;cursor:pointer}
-.pp-stampbtn svg{display:block;width:100%;overflow:visible;transition:transform .35s var(--ease)}
-.pp-stampbtn:hover svg{transform:translateY(-3px) scale(1.04)}
+.pp-stampbtn{position:absolute;padding:0;margin:0;width:8%;border:0;background:transparent;line-height:0;mix-blend-mode:multiply;opacity:.94;cursor:pointer}
+.pp-stampbtn img{display:block;width:100%;height:auto;box-shadow:0 1px 3px rgba(45,3,2,.3);transition:transform .35s var(--ease)}
+.pp-stampbtn:hover img{transform:translateY(-3px) scale(1.04)}
 .pp-stampin{animation:ppthud .6s cubic-bezier(.2,.9,.25,1.15)}
 @keyframes ppthud{0%{transform:scale(1.9);opacity:0}45%{transform:scale(.94);opacity:1}72%{transform:scale(1.03)}100%{transform:scale(1);opacity:1}}
 .pp-stamp text{font-family:var(--body)}
@@ -428,8 +430,8 @@ figcaption{position:absolute;left:10px;bottom:9px;font-size:11px;letter-spacing:
 .pp-tray{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:6px;padding:24px;background:var(--paper-deep);border-top:1px solid var(--hairline)}
 .pp-cell{display:flex;flex-direction:column;align-items:center;gap:6px;width:100%;padding:8px 2px 6px;border:1px solid var(--hairline);background:transparent;color:var(--cellar);font-family:var(--body);font-size:11px;line-height:1.4;letter-spacing:.1em;text-transform:uppercase;text-align:center;cursor:pointer;transition:transform .35s var(--ease),background .35s var(--ease)}
 .pp-cell:hover{transform:translateY(-4px)}
-.pp-cell .st{display:block;width:100%;max-width:52px}
-.pp-cell .st svg{display:block;width:100%;overflow:visible}
+.pp-cell .st{display:block;width:100%;max-width:44px}
+.pp-cell .st svg,.pp-cell .st img{display:block;width:100%;height:auto;overflow:visible}
 .pp-cell.on .st{opacity:.28}
 .pp-cell.in{border-color:var(--wisteria);background:var(--paper)}
 .pp-cell.in .st{transform:rotate(-6deg) scale(1.06)}
@@ -447,7 +449,7 @@ figcaption{position:absolute;left:10px;bottom:9px;font-size:11px;letter-spacing:
 .pp-clear{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:96px}
 .pp-clear p{font-size:13px;color:var(--text-soft)}
 
-@media (prefers-reduced-motion:reduce){.pp-stampin{animation:none}.pp-cell:hover,.pp-stampbtn:hover svg{transform:none}}
+@media (prefers-reduced-motion:reduce){.pp-stampin{animation:none}.pp-cell:hover,.pp-stampbtn:hover img{transform:none}}
 @media (max-width:899px){
  .pp-wrap{padding:96px 6vw}
  .pp-heroin{padding-top:150px;padding-bottom:72px}
