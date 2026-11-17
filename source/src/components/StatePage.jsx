@@ -11,12 +11,10 @@ import { stampImg } from '../stampimgs.js'
 import { glassImg } from '../glassimgs.js'
 gsap.registerPlugin(ScrollTrigger)
 
-function Speaker() { return <svg viewBox="0 0 24 24" aria-hidden><path d="M3 9v6h4l5 4V5L7 9H3z" /><path d="M15.5 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg> }
 // Footnote numbers in the story text point at sources that are not shown on the page. Flip to true to show them.
 const SHOW_FOOTNOTES = false
 
 const pad = (n) => String(n).padStart(2, '0')
-const hear = (base, slug, kind) => { new Audio(`${base}audio/${slug}-${kind}.mp3`).play().catch(() => {}) } // recordings come later
 
 export default function StatePage({ state: s, base }) {
   const root = useRef(null), ingImg = useRef(null)
@@ -42,6 +40,7 @@ export default function StatePage({ state: s, base }) {
     document.fonts?.ready.then(fit)
     return () => { ro.disconnect(); window.removeEventListener('resize', fit) }
   }, [s.slug])
+  const prev = states[s.stop - 2] || states[states.length - 1] // the first stop loops back to the last
   const next = states[s.stop] || states[0] // registry is in route order, so index = stop number; the last stop loops to the first
   const a = s.arrival, ing = s.ingredient, st = s.story, o = s.order
   const I = s.images || {}                                         // real photos by slot name (h1, h2, h3, tile, t1, t2, big, story); missing = placeholder
@@ -108,7 +107,6 @@ export default function StatePage({ state: s, base }) {
           </h1>
           <div className="txt entry">
             <div className="entry-head">
-              <button className="spk" onClick={() => hear(base, s.slug, 'name')} aria-label="Hear the name"><Speaker /></button>
               <div>
                 <div className="headword">{a.english.toLowerCase()}</div>
                 <div className="pron">/{a.pron}/</div>
@@ -122,7 +120,6 @@ export default function StatePage({ state: s, base }) {
             <h3 className="entry-sub">Greeting</h3>
             <ul>
               <li>
-                <button className="spk sm" onClick={() => hear(base, s.slug, 'greeting')} aria-label="Hear the greeting"><Speaker /></button>
                 <mark lang={a.greeting.lang || nameLang} className={a.greeting.roman ? undefined : 'deva'}>{a.greeting.script}</mark>{a.greeting.script2 && <> <mark lang="ur" className="deva">{a.greeting.script2}</mark></>} ({a.greeting.translit}): {a.greeting.meaning}
               </li>
             </ul>
@@ -201,6 +198,13 @@ export default function StatePage({ state: s, base }) {
 
       {/* ---------- FOOTER ---------- */}
       <footer className="foot">
+        {prev && (
+          <a className="prev" href={`${base}${prev.slug}/index.html`}>
+            <span className="cap soft">{`Previous stop ${pad(prev.stop)}`}</span>
+            <span className="next-name">{prev.name.toLowerCase()}</span>
+            <svg viewBox="0 0 60 20" aria-hidden><path d="M58 10 H4 M14 3 L4 10 L14 17" /></svg>
+          </a>
+        )}
         {next && (
           <a className="next" href={`${base}${next.slug}/index.html`}>
             <span className="cap soft">{s.stop === s.total ? 'Back to the start' : `Next stop ${pad(next.stop)}`}</span>

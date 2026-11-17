@@ -125,10 +125,6 @@ sup{font-size:.7em;margin-left:1px;color:var(--ink)}
 .entry-sub{font-family:var(--head);font-weight:400;font-size:1.9vw;text-transform:lowercase;color:var(--b);margin:1.1em 0 .3em}
 .entry ul{padding-left:1.2em}
 .entry li{margin-top:.4em}
-.spk{flex:none;display:inline-grid;place-items:center;width:3.4vw;height:3.4vw;min-width:44px;min-height:44px;background:var(--b);color:var(--cream);transition:background .35s var(--ease)}
-.spk svg{width:52%;fill:currentColor}
-.spk:hover{background:var(--cellar)}
-.spk.sm{width:1.9vw;height:1.9vw;min-width:26px;min-height:26px;margin:0 .5em 0 0;vertical-align:middle}
 .entry ul{list-style:none;padding-left:0}
 
 /* ---------- shared scene layout ---------- */
@@ -177,13 +173,15 @@ sup{font-size:.7em;margin-left:1px;color:var(--ink)}
 
 /* footer */
 .foot{position:relative;display:grid;grid-template-columns:1fr;gap:5vw;padding:10vh 1.7vw 12vh;background:var(--bg);color:var(--cellar);--b:var(--cellar);--bd:var(--cellar);--text-soft:#6e5a55;--hairline:rgba(45,3,2,.22);--soft:var(--text-soft);--line:var(--hairline)}
-.foot .next svg{stroke:var(--wisteria)}
-.foot .next:hover .next-name{color:var(--wisteria)}
+.foot .next svg,.foot .prev svg{stroke:var(--wisteria)}
+.foot .next:hover .next-name,.foot .prev:hover .next-name{color:var(--wisteria)}
 .sources a{text-decoration:underline;text-underline-offset:2px}
-.next{display:grid;justify-items:end;gap:.6vw;text-align:right}
+.next,.prev{display:grid;justify-items:end;gap:.6vw;text-align:right}
+.prev{justify-items:start;text-align:left}
+.foot:has(.prev){grid-template-columns:1fr 1fr}.foot .next{grid-column:2}.foot .prev{grid-column:1}
 .next-name{text-transform:lowercase;font-family:var(--head);font-weight:400;color:var(--b);font-size:3.4vw;line-height:1}
 .next-name b{font-family:var(--deva);font-weight:800;margin-right:.3em}
-.next svg{width:4vw;fill:none;stroke:var(--b);stroke-width:1.5}
+.next svg,.prev svg{width:4vw;fill:none;stroke:var(--b);stroke-width:1.5}
 
 /* ---------- responsive ----------
    >= 900px  the 12-column vw grid above (desktop and large tablets), nav sizes floored so they stay readable
@@ -231,9 +229,7 @@ sup{font-size:.7em;margin-left:1px;color:var(--ink)}
  .entry{font-size:14px}
  .entry-head{gap:14px}
  .entry-sub{font-size:clamp(22px,6vw,28px)}
- .spk{width:48px;height:48px}
- .spk.sm{width:40px;height:40px;margin-right:.6em}
- .cap{font-size:13px}
+   .cap{font-size:13px}
 
  /* scenes: one flat column */
  .scene{height:auto;min-height:0;padding:56px 6vw;display:grid;gap:28px}
@@ -247,7 +243,7 @@ sup{font-size:.7em;margin-left:1px;color:var(--ink)}
  .flip .o-title,.flip .circled{text-align:left}
  .story-p{max-width:none}
  .flip .col-thumbs{justify-items:stretch}.flip .col-thumbs .ing-t2{margin-right:0}
- .foot{grid-template-columns:1fr;padding:48px 6vw 72px}.next{justify-items:start;text-align:left}.next-name{font-size:clamp(36px,9vw,56px)}.next svg{width:56px}
+ .foot,.foot:has(.prev){grid-template-columns:1fr;padding:48px 6vw 72px;gap:40px}.foot .next,.foot .prev{grid-column:1}.foot .next{order:-1}.next{justify-items:start;text-align:left}.next-name{font-size:clamp(36px,9vw,56px)}.next svg,.prev svg{width:56px}
 }
 /* tablet: two columns inside each scene instead of one long stack */
 @media (min-width:600px) and (max-width:899px){
