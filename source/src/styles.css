@@ -488,7 +488,9 @@ figcaption{position:absolute;left:10px;bottom:9px;font-size:11px;letter-spacing:
 .pp-cell.on .st{opacity:.28}
 .pp-cell.in{border-color:var(--wisteria);background:var(--paper)}
 .pp-cell.in .st{transform:rotate(-6deg) scale(1.06)}
-.pp-cell.lock{border-style:dashed;border-color:rgba(45,3,2,.4)}
+.pp-cell.lock{border-style:dashed;border-color:rgba(45,3,2,.4);cursor:default}
+.pp-cell.lock:hover{transform:none}
+.pp-cell.lock .st{opacity:.45;filter:grayscale(.85)}
 
 /* saved glasses */
 .pp-glasses{border-top:1px solid var(--hairline)}

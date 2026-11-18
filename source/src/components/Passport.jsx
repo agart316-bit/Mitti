@@ -63,7 +63,7 @@ export default function Passport({ base }) {
   // Read what this browser has saved. Done in an effect so the page renders first and never reads storage during build.
   useEffect(() => {
     const p = loadPlaced()
-    setStamps(loadStamps()); setPlaced(p); setGlasses(loadGlasses())
+    setStamps(Object.fromEntries(STATES.map((s) => [s.id, 1]))); setPlaced(p); setGlasses(loadGlasses())
     setSeq(Math.max(0, ...Object.values(p).map((v) => v.n || 0)))
   }, [])
 
@@ -114,7 +114,7 @@ export default function Passport({ base }) {
   }
   const liftAll = () => { setPlaced({}); savePlaced({}); setHand(null) }
   const removeGlass = (i) => { const next = glasses.filter((_, j) => j !== i); setGlasses(next); saveGlasses(next) }
-  const clear = () => { clearAll(); setStamps({}); setPlaced({}); setGlasses([]); setHand(null); setSeq(0) }
+  const clear = () => { clearAll(); setStamps(Object.fromEntries(STATES.map((s) => [s.id, 1]))); setPlaced({}); setGlasses([]); setHand(null); setSeq(0) }
 
   const hint = hand ? `press ${byId(hand).name} onto a page`
     : !count ? 'taste a state to earn your first stamp'
@@ -206,13 +206,10 @@ export default function Passport({ base }) {
                   <span>{s.num}</span>
                 </button>
               ) : (
-                <a key={s.id} className="pp-cell lock" href={`${base}${s.id}/index.html`} title={s.name} aria-label={`${s.name}, not yet tasted. Open the ${s.name} page.`}>
-                  <svg className="st" viewBox="0 0 60 140" aria-hidden>
-                    <rect x="2" y="2" width="56" height="136" rx="3" fill="none" stroke="#2d0302" strokeOpacity="0.6" strokeWidth="1.4" strokeDasharray="4 5" />
-                    <text transform="translate(37 70) rotate(-90)" textAnchor="middle" fontSize={Math.min(SSIZE[s.id] || 20, 24)} fill="#6e5a55" lang="und" className="pp-scr">{s.script}</text>
-                  </svg>
+                <div key={s.id} className="pp-cell lock" title={`${s.name}: taste this state to earn its stamp`} aria-label={`${s.name} stamp, not yet earned.`}>
+                  <span className="st"><StampImg s={s} /></span>
                   <span>{s.num}</span>
-                </a>
+                </div>
               )
             })}
           </div>
